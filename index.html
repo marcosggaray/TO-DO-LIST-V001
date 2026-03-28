@@ -1,0 +1,727 @@
+<!DOCTYPE html>  
+  
+<html lang="es">  
+<head>  
+<meta charset="UTF-8"/>  
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover"/>  
+<meta name="apple-mobile-web-app-capable" content="yes"/>  
+<meta name="apple-mobile-web-app-status-bar-style" content="default"/>  
+<meta name="apple-mobile-web-app-title" content="To Do"/>  
+<meta name="theme-color" content="#e8f0fe"/>  
+<title>To Do List</title>  
+  
+<link rel="apple-touch-icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRmYWNmZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ODU2RDYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNoaW5lIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4yMikiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmYWRlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xMykiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0iYmx1ciI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNSIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8IS0tIEZvbmRvIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iMjYwIiByeD0iMTE1IiBmaWxsPSJ1cmwoI3NoaW5lKSIvPgoKICA8IS0tIExpc3RhIGRpZnVtaW5hZGEgZGV0csOhcyAtLT4KICA8ZyBmaWx0ZXI9InVybCgjYmx1cikiIG9wYWNpdHk9IjAuNDUiPgogICAgPCEtLSBGaWxhIDEgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjE3MCIgcj0iMTMiIGZpbGw9IndoaXRlIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjE2MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgogICAgPCEtLSBGaWxhIDIgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjIzMCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjc1Ii8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43NSIvPgogICAgPCEtLSBGaWxhIDMgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjI5MCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iMjgwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDwhLS0gRmlsYSA0IC0tPgogICAgPGNpcmNsZSBjeD0iOTAiIGN5PSIzNTAiIHI9IjEzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjM0MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8IS0tIEZpbGEgNSAtLT4KICAgIDxjaXJjbGUgY3g9IjkwIiBjeT0iNDEwIiByPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMTUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iNDAwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjE1Ii8+CiAgPC9nPgoKICA8IS0tIFRleHRvICJUbyIgLS0+CiAgPHRleHQgeD0iMjU2IiB5PSIxOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iJ0hlbHZldGljYSBOZXVlJyxBcmlhbCxzYW5zLXNlcmlmIgogICAgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIxNTUiCiAgICBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9Ii0zIj5UbzwvdGV4dD4KCiAgPCEtLSBUZXh0byAiRG8iIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9IidIZWx2ZXRpY2EgTmV1ZScsQXJpYWwsc2Fucy1zZXJpZiIKICAgIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTU1IgogICAgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSItMyI+RG88L3RleHQ+Cjwvc3ZnPgo="/>  
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIiB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiI+CiAgPGRlZnM+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjEwMCUiIHkyPSIxMDAlIj4KICAgICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzRmYWNmZSIvPgogICAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiM1ODU2RDYiLz4KICAgIDwvbGluZWFyR3JhZGllbnQ+CiAgICA8bGluZWFyR3JhZGllbnQgaWQ9InNoaW5lIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4yMikiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDApIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGxpbmVhckdyYWRpZW50IGlkPSJmYWRlIiB4MT0iMCUiIHkxPSIwJSIgeDI9IjAlIiB5Mj0iMTAwJSI+CiAgICAgIDxzdG9wIG9mZnNldD0iMCUiIHN0b3AtY29sb3I9InJnYmEoMjU1LDI1NSwyNTUsMC4xMykiLz4KICAgICAgPHN0b3Agb2Zmc2V0PSIxMDAlIiBzdG9wLWNvbG9yPSJyZ2JhKDI1NSwyNTUsMjU1LDAuMDMpIi8+CiAgICA8L2xpbmVhckdyYWRpZW50PgogICAgPGZpbHRlciBpZD0iYmx1ciI+CiAgICAgIDxmZUdhdXNzaWFuQmx1ciBzdGREZXZpYXRpb249IjMuNSIvPgogICAgPC9maWx0ZXI+CiAgPC9kZWZzPgoKICA8IS0tIEZvbmRvIC0tPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iNTEyIiByeD0iMTE1IiBmaWxsPSJ1cmwoI2JnKSIvPgogIDxyZWN0IHdpZHRoPSI1MTIiIGhlaWdodD0iMjYwIiByeD0iMTE1IiBmaWxsPSJ1cmwoI3NoaW5lKSIvPgoKICA8IS0tIExpc3RhIGRpZnVtaW5hZGEgZGV0csOhcyAtLT4KICA8ZyBmaWx0ZXI9InVybCgjYmx1cikiIG9wYWNpdHk9IjAuNDUiPgogICAgPCEtLSBGaWxhIDEgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjE3MCIgcj0iMTMiIGZpbGw9IndoaXRlIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjE2MCIgd2lkdGg9IjIyMCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIvPgogICAgPCEtLSBGaWxhIDIgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjIzMCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjc1Ii8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjIyMCIgd2lkdGg9IjE4MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC43NSIvPgogICAgPCEtLSBGaWxhIDMgLS0+CiAgICA8Y2lyY2xlIGN4PSI5MCIgY3k9IjI5MCIgcj0iMTMiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iMjgwIiB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjUiLz4KICAgIDwhLS0gRmlsYSA0IC0tPgogICAgPGNpcmNsZSBjeD0iOTAiIGN5PSIzNTAiIHI9IjEzIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8cmVjdCB4PSIxMTgiIHk9IjM0MCIgd2lkdGg9IjE1MCIgaGVpZ2h0PSIyMCIgcng9IjEwIiBmaWxsPSJ3aGl0ZSIgb3BhY2l0eT0iMC4zIi8+CiAgICA8IS0tIEZpbGEgNSAtLT4KICAgIDxjaXJjbGUgY3g9IjkwIiBjeT0iNDEwIiByPSIxMyIgZmlsbD0id2hpdGUiIG9wYWNpdHk9IjAuMTUiLz4KICAgIDxyZWN0IHg9IjExOCIgeT0iNDAwIiB3aWR0aD0iMTcwIiBoZWlnaHQ9IjIwIiByeD0iMTAiIGZpbGw9IndoaXRlIiBvcGFjaXR5PSIwLjE1Ii8+CiAgPC9nPgoKICA8IS0tIFRleHRvICJUbyIgLS0+CiAgPHRleHQgeD0iMjU2IiB5PSIxOTUiIHRleHQtYW5jaG9yPSJtaWRkbGUiCiAgICBmb250LWZhbWlseT0iJ0hlbHZldGljYSBOZXVlJyxBcmlhbCxzYW5zLXNlcmlmIgogICAgZm9udC13ZWlnaHQ9IjgwMCIgZm9udC1zaXplPSIxNTUiCiAgICBmaWxsPSJ3aGl0ZSIgbGV0dGVyLXNwYWNpbmc9Ii0zIj5UbzwvdGV4dD4KCiAgPCEtLSBUZXh0byAiRG8iIC0tPgogIDx0ZXh0IHg9IjI1NiIgeT0iMzc1IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIgogICAgZm9udC1mYW1pbHk9IidIZWx2ZXRpY2EgTmV1ZScsQXJpYWwsc2Fucy1zZXJpZiIKICAgIGZvbnQtd2VpZ2h0PSI4MDAiIGZvbnQtc2l6ZT0iMTU1IgogICAgZmlsbD0id2hpdGUiIGxldHRlci1zcGFjaW5nPSItMyI+RG88L3RleHQ+Cjwvc3ZnPgo="/>  
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>  
+<style>  
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}  
+html,body{height:100%;overflow:hidden;font-family:'Plus Jakarta Sans','SF Pro Display',sans-serif;}  
+::-webkit-scrollbar{width:4px;}  
+::-webkit-scrollbar-thumb{background:rgba(0,0,0,0.12);border-radius:4px;}  
+  
+.glass{  
+background:rgba(255,255,255,0.52);  
+backdrop-filter:blur(24px) saturate(180%);  
+-webkit-backdrop-filter:blur(24px) saturate(180%);  
+border:1px solid rgba(255,255,255,0.78);  
+box-shadow:0 4px 20px rgba(0,0,0,0.07),0 1px 0 rgba(255,255,255,0.9) inset;  
+}  
+.task-row{  
+background:rgba(255,255,255,0.44);  
+backdrop-filter:blur(18px);  
+-webkit-backdrop-filter:blur(18px);  
+border:1px solid rgba(255,255,255,0.7);  
+border-radius:12px;margin-bottom:5px;overflow:hidden;  
+animation:rowIn .22s ease both;  
+}  
+.task-row:active{opacity:.8;}  
+  
+.gi{background:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.85);border-radius:9px;padding:8px 11px;font-size:14px;font-family:inherit;color:#1c1c1e;outline:none;width:100%;}  
+.gi:focus{border-color:rgba(0,122,255,0.5);box-shadow:0 0 0 3px rgba(0,122,255,0.1);}  
+.gi::placeholder{color:#aeaeb2;}  
+select.gi option{background:#f2f2f7;color:#1c1c1e;}  
+input[type=“date”].gi::-webkit-calendar-picker-indicator{opacity:.5;}  
+  
+.abtn{color:#fff;border:none;border-radius:11px;padding:9px 16px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;white-space:nowrap;transition:filter .15s;}  
+.abtn:active{filter:brightness(.88);}  
+.abtn:disabled{background:#c7c7cc!important;cursor:default;}  
+  
+.ibtn{background:rgba(0,0,0,0.05);border:none;border-radius:7px;width:26px;height:26px;cursor:pointer;font-size:12px;display:flex;align-items:center;justify-content:center;color:#636366;flex-shrink:0;}  
+.ibtn:active{background:rgba(0,0,0,0.14);}  
+  
+.spill{border-radius:18px;padding:4px 8px;font-size:11px;font-weight:700;cursor:pointer;border:none;white-space:nowrap;font-family:inherit;}  
+.statpill{background:rgba(255,255,255,0.55);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-radius:10px;border:1px solid rgba(255,255,255,0.7);padding:5px 8px;display:flex;flex-direction:column;gap:1px;flex:1 1 0;min-width:55px;}  
+  
+.overlay{position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.32);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);display:flex;align-items:center;justify-content:center;padding:20px;}  
+.popup{background:rgba(255,255,255,0.92);backdrop-filter:blur(32px) saturate(200%);-webkit-backdrop-filter:blur(32px) saturate(200%);border-radius:20px;border:1px solid rgba(255,255,255,0.9);box-shadow:0 20px 60px rgba(0,0,0,0.15);padding:22px;max-width:380px;width:100%;animation:popIn .2s ease;}  
+  
+.home-card{background:rgba(255,255,255,0.52);backdrop-filter:blur(28px) saturate(180%);-webkit-backdrop-filter:blur(28px) saturate(180%);border:1px solid rgba(255,255,255,0.82);box-shadow:0 8px 32px rgba(0,0,0,0.09),0 1px 0 rgba(255,255,255,0.95) inset;border-radius:28px;padding:32px 26px;display:flex;flex-direction:column;align-items:center;gap:10px;cursor:pointer;width:200px;animation:fadeUp .4s ease both;}  
+.home-card:active{transform:scale(.97);}  
+  
+.bg{background:linear-gradient(135deg,#dce8fd 0%,#f8e1ec 45%,#ede0f7 75%,#daeeff 100%);}  
+.screen{display:none;height:100vh;flex-direction:column;}  
+.screen.on{display:flex;}  
+#s-home{display:none;height:100vh;flex-direction:column;align-items:center;justify-content:center;gap:26px;}  
+#s-home.on{display:flex;}  
+.task-list{flex:1;overflow-y:auto;padding:0 8px 40px;-webkit-overflow-scrolling:touch;}  
+  
+#toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(16px);background:rgba(28,28,30,.9);color:#fff;padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;opacity:0;transition:all .3s;z-index:999;pointer-events:none;white-space:nowrap;}  
+#toast.show{opacity:1;transform:translateX(-50%) translateY(0);}  
+  
+@keyframes rowIn{from{opacity:0;transform:translateY(4px)}to{opacity:1;transform:translateY(0)}}  
+@keyframes popIn{from{opacity:0;transform:scale(.95)}to{opacity:1;transform:scale(1)}}  
+@keyframes fadeUp{from{opacity:0;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}  
+@keyframes blink{0%,100%{opacity:1}50%{opacity:.25}}  
+</style>  
+  
+</head>  
+<body class="bg">  
+  
+<div id="toast"></div>  
+  
+<!-- ══════════════ HOME ══════════════ -->  
+  
+<div id="s-home" class="on bg">  
+  <div style="text-align:center;animation:fadeUp .35s ease both;">  
+    <div style="font-size:11px;letter-spacing:3px;color:rgba(100,100,130,.7);text-transform:uppercase;font-weight:700;margin-bottom:8px;">Bienvenido</div>  
+    <h1 style="font-size:34px;font-weight:800;color:#1c1c1e;letter-spacing:-1px;line-height:1;">To Do List</h1>  
+    <div style="font-size:13px;color:#8e8e93;margin-top:6px;">Elige tu espacio de trabajo</div>  
+  </div>  
+  <div style="display:flex;gap:14px;flex-wrap:wrap;justify-content:center;">  
+    <div class="home-card" style="animation-delay:.1s" onclick="openList('work')">  
+      <div style="font-size:44px;line-height:1;">💼</div>  
+      <div style="font-size:18px;font-weight:800;color:#1c1c1e;">Trabajo</div>  
+      <div style="font-size:12px;color:#8e8e93;text-align:center;line-height:1.4;">Proyectos y tareas profesionales</div>  
+      <div style="background:rgba(0,122,255,.1);color:#007AFF;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;">TO DO</div>  
+    </div>  
+    <div class="home-card" style="animation-delay:.18s" onclick="openList('personal')">  
+      <div style="font-size:44px;line-height:1;">🏠</div>  
+      <div style="font-size:18px;font-weight:800;color:#1c1c1e;">Personal</div>  
+      <div style="font-size:12px;color:#8e8e93;text-align:center;line-height:1.4;">Vida cotidiana, salud, viajes…</div>  
+      <div style="background:rgba(88,86,214,.1);color:#5856D6;border-radius:20px;padding:4px 14px;font-size:11px;font-weight:700;">PERSONAL</div>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- ══════════════ TODO SCREEN ══════════════ -->  
+  
+<div id="s-todo" class="screen bg">  
+  
+  <!-- HEADER -->  
+  
+  <div class="glass" style="flex-shrink:0;margin:8px 8px 0;border-radius:18px;padding:11px 14px;max-height:22vh;overflow:hidden;padding-top:max(11px,env(safe-area-inset-top));">  
+    <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;gap:6px;">  
+      <div style="display:flex;align-items:center;gap:7px;">  
+        <button onclick="goHome()" style="background:rgba(0,0,0,0.06);border:none;border-radius:8px;padding:5px 10px;font-size:12px;cursor:pointer;font-family:inherit;color:#636366;flex-shrink:0;">← Menú</button>  
+        <div>  
+          <div id="hdr-label" style="font-size:9px;letter-spacing:2px;color:#8e8e93;text-transform:uppercase;font-weight:700;"></div>  
+          <div style="font-size:17px;font-weight:800;color:#1c1c1e;letter-spacing:-.5px;">To Do List</div>  
+        </div>  
+      </div>  
+      <div style="display:flex;align-items:center;gap:4px;flex-shrink:0;">  
+        <span id="sync-dot" style="width:6px;height:6px;border-radius:50%;background:#30D158;display:inline-block;animation:blink 2.5s infinite;flex-shrink:0;"></span>  
+        <span id="sync-txt" style="font-size:10px;color:#8e8e93;white-space:nowrap;">Guardado ✓</span>  
+      </div>  
+    </div>  
+    <div style="display:flex;gap:4px;" id="stats-row"></div>  
+  </div>  
+  
+  <!-- TOOLBAR -->  
+  
+  <div style="flex-shrink:0;margin:7px 8px 5px;display:flex;align-items:center;gap:6px;flex-wrap:wrap;">  
+    <div style="position:relative;">  
+      <span style="position:absolute;left:8px;top:50%;transform:translateY(-50%);font-size:12px;color:#aeaeb2;pointer-events:none;">🔍</span>  
+      <input id="search-inp" class="gi" style="padding-left:28px;width:130px;font-size:13px;" placeholder="Buscar…" oninput="renderTasks()"/>  
+    </div>  
+    <button id="btn-fin" onclick="toggleFin()" style="background:rgba(0,0,0,0.05);border:1px solid transparent;border-radius:10px;padding:6px 10px;font-size:11px;font-weight:600;cursor:pointer;font-family:inherit;color:#636366;white-space:nowrap;display:flex;align-items:center;gap:4px;">  
+      👁 Finalizadas <span id="fin-badge" style="display:none;background:#c7c7cc;color:#fff;border-radius:20px;padding:1px 6px;font-size:10px;font-weight:700;"></span>  
+    </button>  
+    <span id="task-count" style="font-size:11px;color:#8e8e93;flex:1;"></span>  
+    <button id="btn-new" class="abtn" onclick="toggleForm()" style="background:linear-gradient(135deg,#007AFF,#5856D6);">+ Nueva</button>  
+  </div>  
+  
+  <!-- ADD FORM -->  
+  
+  <div id="add-form" style="display:none;flex-shrink:0;margin:0 8px 6px;">  
+    <div class="glass" style="border-radius:14px;padding:12px;">  
+      <div style="display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:7px;">  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Tarea *</div>  
+          <input id="f-task" class="gi" placeholder="Descripción de la tarea…" onkeydown="if(event.key==='Enter')addTask()"/>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Comentarios</div>  
+          <input id="f-comments" class="gi" placeholder="Notas adicionales…"/>  
+        </div>  
+      </div>  
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:10px;">  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Inicio <span style="color:#30D158;">●</span></div>  
+          <input id="f-start" type="date" class="gi"/>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Vencimiento</div>  
+          <input id="f-due" type="date" class="gi"/>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Proyecto</div>  
+          <button id="f-proj-btn" onclick="openProjPicker()" style="width:100%;background:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.85);border-radius:9px;padding:8px 11px;font-size:13px;font-family:inherit;color:#1c1c1e;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;">  
+            <span id="f-proj-lbl">—</span><span style="font-size:10px;color:#aeaeb2;">▾</span>  
+          </button>  
+        </div>  
+        <div>  
+          <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Status</div>  
+          <select id="f-status" class="gi">  
+            <option value="not_started">Not started</option>  
+            <option value="ongoing">Ongoing</option>  
+            <option value="finished">Finished</option>  
+            <option value="standby">Standby</option>  
+          </select>  
+        </div>  
+      </div>  
+      <button class="abtn" id="btn-add" onclick="addTask()" style="width:100%;background:linear-gradient(135deg,#007AFF,#5856D6);">Añadir tarea</button>  
+    </div>  
+  </div>  
+  
+  <!-- TABLE HEADER -->  
+  
+  <div class="glass" id="tbl-hdr" style="flex-shrink:0;margin:0 8px 4px;border-radius:10px;padding:0 5px;display:grid;"></div>  
+  
+  <!-- TASKS -->  
+  
+  <div class="task-list" id="task-list"></div>  
+</div>  
+  
+<!-- ══════════════ COMMENTS POPUP ══════════════ -->  
+  
+<div id="pop-c" class="overlay" style="display:none;" onclick="closeComments()">  
+  <div class="popup" onclick="event.stopPropagation()">  
+    <div id="pc-meta" style="font-size:10px;color:#8e8e93;font-weight:700;text-transform:uppercase;letter-spacing:.8px;margin-bottom:5px;"></div>  
+    <div id="pc-title" style="font-size:15px;font-weight:700;color:#1c1c1e;margin-bottom:14px;line-height:1.35;"></div>  
+    <div style="font-size:10px;color:#8e8e93;font-weight:700;margin-bottom:5px;text-transform:uppercase;letter-spacing:.5px;">Comentarios</div>  
+    <div id="pc-body" style="font-size:13px;background:rgba(0,0,0,0.04);border-radius:12px;padding:10px 14px;line-height:1.5;min-height:44px;"></div>  
+    <div id="pc-dates" style="margin-top:12px;display:flex;gap:14px;font-size:12px;color:#636366;"></div>  
+    <div id="pc-photo" style="margin-top:10px;"></div>  
+    <button onclick="closeComments()" style="margin-top:14px;width:100%;background:rgba(0,0,0,0.07);border:none;border-radius:12px;padding:11px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit;">Cerrar</button>  
+  </div>  
+</div>  
+  
+<!-- ══════════════ EDIT POPUP ══════════════ -->  
+  
+<div id="pop-e" class="overlay" style="display:none;" onclick="closeEdit()">  
+  <div class="popup" onclick="event.stopPropagation()">  
+    <div style="font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:14px;">✏️ Editar tarea</div>  
+    <div style="display:grid;grid-template-columns:1fr;gap:7px;margin-bottom:7px;">  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Tarea *</div>  
+        <input id="e-task" class="gi" placeholder="Descripción de la tarea…"/>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Comentarios</div>  
+        <input id="e-comments" class="gi" placeholder="Notas adicionales…"/>  
+      </div>  
+    </div>  
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-bottom:14px;">  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Inicio</div>  
+        <input id="e-start" type="date" class="gi"/>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Vencimiento</div>  
+        <input id="e-due" type="date" class="gi"/>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Proyecto</div>  
+        <button id="e-proj-btn" onclick="openProjPickerEdit()" style="width:100%;background:rgba(255,255,255,0.65);border:1px solid rgba(255,255,255,0.85);border-radius:9px;padding:8px 11px;font-size:13px;font-family:inherit;color:#1c1c1e;text-align:left;cursor:pointer;display:flex;align-items:center;justify-content:space-between;font-weight:600;">  
+          <span id="e-proj-lbl">—</span><span style="font-size:10px;color:#aeaeb2;">▾</span>  
+        </button>  
+      </div>  
+      <div>  
+        <div style="font-size:10px;color:#8e8e93;margin-bottom:3px;font-weight:700;">Status</div>  
+        <select id="e-status" class="gi">  
+          <option value="not_started">Not started</option>  
+          <option value="ongoing">Ongoing</option>  
+          <option value="finished">Finished</option>  
+          <option value="standby">Standby</option>  
+        </select>  
+      </div>  
+    </div>  
+    <div style="display:flex;gap:8px;">  
+      <button onclick="saveEdit()" style="flex:1;background:linear-gradient(135deg,#007AFF,#5856D6);color:#fff;border:none;border-radius:12px;padding:12px;font-size:13px;font-weight:700;cursor:pointer;font-family:inherit;">Guardar cambios</button>  
+      <button onclick="closeEdit()" style="background:rgba(0,0,0,0.07);border:none;border-radius:12px;padding:12px 16px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit;">Cancelar</button>  
+    </div>  
+  </div>  
+</div>  
+  
+<!-- ══════════════ PROJECT PICKER POPUP ══════════════ -->  
+  
+<div id="pop-p" class="overlay" style="display:none;" onclick="closeProjPicker()">  
+  <div class="popup" style="max-width:320px;" onclick="event.stopPropagation()">  
+    <div style="font-size:13px;font-weight:700;color:#1c1c1e;margin-bottom:14px;">Seleccionar proyecto</div>  
+    <div id="proj-chips" style="display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px;"></div>  
+    <div style="border-top:1px solid rgba(0,0,0,0.07);padding-top:14px;">  
+      <div style="font-size:11px;color:#8e8e93;font-weight:600;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px;">Nuevo proyecto</div>  
+      <div style="display:flex;gap:8px;">  
+        <input id="np-inp" class="gi" style="font-size:13px;" placeholder="Nombre…" onkeydown="if(event.key==='Enter')addProj()"/>  
+        <button onclick="addProj()" style="background:linear-gradient(135deg,#007AFF,#5856D6);color:#fff;border:none;border-radius:10px;padding:8px 14px;font-size:14px;font-weight:700;cursor:pointer;font-family:inherit;">+</button>  
+      </div>  
+    </div>  
+    <button onclick="closeProjPicker()" style="margin-top:14px;width:100%;background:rgba(0,0,0,0.06);border:none;border-radius:12px;padding:10px;font-size:13px;font-weight:600;color:#1c1c1e;cursor:pointer;font-family:inherit;">Cerrar</button>  
+  </div>  
+</div>  
+  
+<script>  
+// ─── Constants ───────────────────────────────────────────────  
+const ST = {  
+  not_started:{label:"Not started",color:"#FF453A",bg:"rgba(255,69,58,0.13)"},  
+  ongoing:    {label:"Ongoing",    color:"#FF9F0A",bg:"rgba(255,159,10,0.13)"},  
+  finished:   {label:"Finished",  color:"#30D158", bg:"rgba(48,209,88,0.13)"},  
+  standby:    {label:"Standby",   color:"#636366", bg:"rgba(99,99,102,0.13)"},  
+};  
+const STIDS = ["not_started","ongoing","finished","standby"];  
+const DEF = {  
+  work:    {proj:["ONT5","ONT4","TGW","SILO","NAVE","OTRO"],accent:"#007AFF",label:"Trabajo 💼"},  
+  personal:{proj:["Casa","Salud","Viajes","Compras","Otro"], accent:"#5856D6",label:"Personal 🏠"},  
+};  
+  
+// ─── State ───────────────────────────────────────────────────  
+let mode="work", tasks=[], projs=[], showFin=false, formProj="";  
+  
+// ─── Storage ─────────────────────────────────────────────────  
+const TK = () => "todo-tasks-" + mode + "-v6";  
+const PK = () => "todo-projs-" + mode + "-v6";  
+  
+function lsGet(k) {  
+  try { const r = localStorage.getItem(k); return r ? JSON.parse(r) : null; }  
+  catch(e) { return null; }  
+}  
+function lsSet(k, v) {  
+  try { localStorage.setItem(k, JSON.stringify(v)); return true; }  
+  catch(e) { return false; }  
+}  
+  
+// ─── Helpers ─────────────────────────────────────────────────  
+function todayISO() {  
+  const d = new Date();  
+  return d.getFullYear()+"-"+S2(d.getMonth()+1)+"-"+S2(d.getDate());  
+}  
+function S2(n) { return String(n).padStart(2,"0"); }  
+function getDelay(due) {  
+  if (!due) return null;  
+  const t = new Date(); t.setHours(0,0,0,0);  
+  return Math.floor((t - new Date(due+"T00:00:00")) / 86400000);  
+}  
+function fmt(d) {  
+  if (!d) return "—";  
+  return new Date(d+"T00:00:00").toLocaleDateString("es-ES",{day:"2-digit",month:"short"});  
+}  
+function esc(s) {  
+  return String(s||"").replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;").replace(/"/g,"&quot;");  
+}  
+  
+// ─── Toast ───────────────────────────────────────────────────  
+let toastTimer;  
+function toast(msg, type) {  
+  const el = document.getElementById("toast");  
+  el.textContent = msg;  
+  el.style.background = type==="ok" ? "rgba(48,209,88,.9)" : type==="err" ? "rgba(255,69,58,.9)" : "rgba(28,28,30,.9)";  
+  el.classList.add("show");  
+  clearTimeout(toastTimer);  
+  toastTimer = setTimeout(() => el.classList.remove("show"), 2200);  
+}  
+  
+// ─── Navigation ──────────────────────────────────────────────  
+function openList(m) {  
+  mode = m;  
+  tasks = lsGet(TK()) || [];  
+  projs = lsGet(PK()) || [...DEF[m].proj];  
+  showFin = false;  
+  formProj = projs[0] || "";  
+  
+  document.getElementById("hdr-label").textContent = DEF[m].label;  
+  const ac = DEF[m].accent;  
+  document.getElementById("btn-new").style.background = `linear-gradient(135deg,${ac},#5856D6)`;  
+  document.getElementById("btn-add").style.background = `linear-gradient(135deg,${ac},#5856D6)`;  
+  
+  resetForm();  
+  document.getElementById("s-home").classList.remove("on");  
+  document.getElementById("s-todo").classList.add("on");  
+  renderAll();  
+}  
+  
+function goHome() {  
+  document.getElementById("s-todo").classList.remove("on");  
+  document.getElementById("add-form").style.display = "none";  
+  document.getElementById("btn-new").textContent = "+ Nueva";  
+  document.getElementById("search-inp").value = "";  
+  document.getElementById("s-home").classList.add("on");  
+}  
+  
+function resetForm() {  
+  document.getElementById("f-task").value = "";  
+  document.getElementById("f-comments").value = "";  
+  document.getElementById("f-start").value = todayISO();  
+  document.getElementById("f-due").value = "";  
+  document.getElementById("f-status").value = "not_started";  
+  document.getElementById("f-proj-lbl").textContent = formProj || "—";  
+}  
+  
+// ─── Save ────────────────────────────────────────────────────  
+function save() {  
+  const ok = lsSet(TK(), tasks);  
+  const dot = document.getElementById("sync-dot");  
+  const txt = document.getElementById("sync-txt");  
+  if (ok) {  
+    dot.style.background = "#30D158";  
+    txt.textContent = "Guardado ✓";  
+  } else {  
+    dot.style.background = "#FF453A";  
+    txt.textContent = "Error al guardar";  
+    toast("⚠️ No se pudo guardar", "err");  
+  }  
+}  
+function saveProjs() { lsSet(PK(), projs); }  
+  
+// ─── Render all ──────────────────────────────────────────────  
+function renderAll() { renderStats(); renderHeader(); renderTasks(); renderFinBtn(); }  
+  
+// ─── Stats ───────────────────────────────────────────────────  
+function renderStats() {  
+  const total = tasks.length;  
+  const fin = tasks.filter(t=>t.status==="finished").length;  
+  const ong = tasks.filter(t=>t.status==="ongoing").length;  
+  const ns  = tasks.filter(t=>t.status==="not_started").length;  
+  const sb  = tasks.filter(t=>t.status==="standby").length;  
+  const pct = n => total ? (n/total*100).toFixed(0)+"%" : "0%";  
+  const hoy = tasks.filter(t=>{ const d=getDelay(t.dueDate); return d!==null&&d>=0&&t.status!=="finished"; }).length;  
+  const ac  = DEF[mode].accent;  
+  
+  document.getElementById("stats-row").innerHTML = [  
+    {l:"Finished",   v:pct(fin), n:fin, c:"#30D158"},  
+    {l:"Ongoing",    v:pct(ong), n:ong, c:"#FF9F0A"},  
+    {l:"Not started",v:pct(ns),  n:ns,  c:"#FF453A"},  
+    {l:"Standby",    v:pct(sb),  n:sb,  c:"#636366"},  
+    {l:"Hoy",        v:hoy,      n:"due",c:ac},  
+  ].map(p=>`  
+    <div class="statpill">  
+      <div style="font-size:9px;color:#8e8e93;font-weight:600;text-transform:uppercase;letter-spacing:.4px;white-space:nowrap;">${p.l}</div>  
+      <div style="display:flex;align-items:baseline;gap:3px;">  
+        <span style="font-size:13px;font-weight:800;color:${p.c};">${p.v}</span>  
+        <span style="font-size:9px;color:#8e8e93;">${p.n}</span>  
+      </div>  
+    </div>`).join("");  
+  
+  const badge = document.getElementById("fin-badge");  
+  if (fin > 0) { badge.textContent = fin; badge.style.display = "inline-block"; }  
+  else badge.style.display = "none";  
+}  
+  
+// ─── Table header ────────────────────────────────────────────  
+function renderHeader() {  
+  const mob = window.innerWidth < 640;  
+  const cols = mob ? "44px 40px 1fr 80px 50px 54px" : "54px 50px 1fr 100px 82px 94px 26px 54px";  
+  const lbls = mob ? ["Delay","Nº","Tarea","Status","Vence",""]  
+                   : ["Delay","Nº","Tarea","Vencimiento","Proyecto","Status","💬",""];  
+  const hdr = document.getElementById("tbl-hdr");  
+  hdr.style.gridTemplateColumns = cols;  
+  hdr.innerHTML = lbls.map(h=>`<div style="font-size:10px;font-weight:700;color:#8e8e93;text-transform:uppercase;letter-spacing:.6px;padding:5px 4px;">${h}</div>`).join("");  
+}  
+  
+// ─── Tasks ───────────────────────────────────────────────────  
+function renderTasks() {  
+  const mob = window.innerWidth < 640;  
+  const cols = mob ? "44px 40px 1fr 80px 50px 54px" : "54px 50px 1fr 100px 82px 94px 26px 54px";  
+  const ac   = DEF[mode].accent;  
+  const q    = (document.getElementById("search-inp").value||"").toLowerCase();  
+  
+  const list = tasks.filter(t => {  
+    if (!showFin && t.status==="finished") return false;  
+    return t.task.toLowerCase().includes(q) ||  
+           (t.comments||"").toLowerCase().includes(q) ||  
+           String(t.num).includes(q);  
+  });  
+  
+  document.getElementById("task-count").textContent = list.length + " tareas";  
+  
+  if (!list.length) {  
+    const allDone = tasks.filter(t=>t.status!=="finished").length===0;  
+    const msg = allDone && !showFin ? "🎉 ¡Todo listo! Pulsa 'Finalizadas' para verlas"  
+              : q ? "Ninguna tarea coincide con la búsqueda"  
+              : "Sin tareas · pulsa '+ Nueva' para empezar";  
+    document.getElementById("task-list").innerHTML = `<div style="text-align:center;padding:50px 20px;color:#aeaeb2;font-size:14px;">${msg}</div>`;  
+    return;  
+  }  
+  
+  document.getElementById("task-list").innerHTML = list.map((t, i) => {  
+    const del = getDelay(t.dueDate);  
+    const st  = ST[t.status] || ST.not_started;  
+    const fin = t.status === "finished";  
+  
+    // Colores según delay  
+    let dc, db, rowBg, rowBorder;  
+    if (!t.dueDate || fin) {  
+      dc="#8e8e93"; db="rgba(142,142,147,0.12)";  
+      rowBg="rgba(255,255,255,0.44)"; rowBorder="rgba(255,255,255,0.7)";  
+    } else if (del > 0) {  
+      // Vencida — rojo  
+      dc="#FF453A"; db="rgba(255,69,58,0.18)";  
+      rowBg="rgba(255,69,58,0.06)"; rowBorder="rgba(255,69,58,0.22)";  
+    } else if (del === 0) {  
+      // Hoy — azul  
+      dc="#007AFF"; db="rgba(0,122,255,0.18)";  
+      rowBg="rgba(0,122,255,0.07)"; rowBorder="rgba(0,122,255,0.25)";  
+    } else {  
+      // Futura — verde  
+      dc="#30D158"; db="rgba(48,209,88,0.15)";  
+      rowBg="rgba(48,209,88,0.05)"; rowBorder="rgba(48,209,88,0.2)";  
+    }  
+  
+    const dlbl = !t.dueDate ? "—" : del===0 ? "TODAY" : del>0 ? "+"+del : del;  
+  
+    const statusOpts = STIDS.map(id => {  
+      const slbl = mob ? (id==="not_started"?"Pend.":id==="ongoing"?"Active":id==="finished"?"Done":"Hold") : ST[id].label;  
+      return `<option value="${id}"${t.status===id?" selected":""}>${slbl}</option>`;  
+    }).join("");  
+  
+    const desktopCols = mob ? "" : `  
+      <div style="font-size:11px;color:${del>0?"#FF453A":"#636366"};font-weight:${del>0?700:400};">${fmt(t.dueDate)}</div>  
+      <div><span style="font-size:10px;font-weight:700;color:${ac};background:${ac}1a;border-radius:7px;padding:2px 7px;">${esc(t.project)}</span></div>`;  
+  
+    const commentBtn = mob ? "" : `<div><button class="ibtn" onclick="openComments(${t.id})" style="color:${t.comments?"#007AFF":"#c7c7cc"};">💬</button></div>`;  
+    const mobileVence = mob ? `<div style="font-size:10px;color:${del>0?"#FF453A":"#636366"};font-weight:${del>0?700:400};text-align:center;">${fmt(t.dueDate)}</div>` : "";  
+  
+    const photoEl = t.photo  
+      ? `<img src="${t.photo}" onclick="attachPhoto(${t.id})" style="width:20px;height:20px;border-radius:5px;object-fit:cover;border:1.5px solid rgba(255,255,255,.8);cursor:pointer;display:block;"/>`  
+      : `<button class="ibtn" onclick="attachPhoto(${t.id})" style="font-size:10px;">📷</button>`;  
+  
+    return `  
+      <div class="task-row" style="animation-delay:${i*.02}s;opacity:${fin?.6:1};background:${rowBg};border-color:${rowBorder};">  
+        <div style="display:grid;grid-template-columns:${cols};align-items:center;padding:9px 5px;">  
+          <div><span style="font-size:10px;font-weight:800;border-radius:7px;padding:3px 6px;display:inline-block;min-width:40px;text-align:center;color:${dc};background:${db};">${dlbl}</span></div>  
+          <div style="font-size:11px;color:#636366;font-weight:700;">${t.num}</div>  
+          <div onclick="openComments(${t.id})" style="font-size:12px;font-weight:${del>0?700:500};color:${fin?"#aeaeb2":"#1c1c1e"};text-decoration:${fin?"line-through":"none"};padding-right:4px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;cursor:pointer;">${esc(t.task)}</div>  
+          ${desktopCols}  
+          <div onclick="event.stopPropagation()">  
+            <select class="spill" onchange="updateStatus(${t.id},this.value)" style="color:${st.color};background:${st.bg};">${statusOpts}</select>  
+          </div>  
+          ${mobileVence}  
+          ${commentBtn}  
+          <div style="display:flex;flex-direction:column;gap:2px;align-items:center;" onclick="event.stopPropagation()">  
+            ${photoEl}  
+            <button class="ibtn" onclick="openEdit(${t.id})" style="font-size:11px;">✏️</button>  
+            <button class="ibtn" onclick="deleteTask(${t.id})" style="font-size:9px;color:#FF453A;">✕</button>  
+          </div>  
+        </div>  
+      </div>`;  
+  }).join("");  
+}  
+  
+function renderFinBtn() {  
+  const btn = document.getElementById("btn-fin");  
+  if (showFin) {  
+    btn.style.background = "rgba(48,209,88,0.13)";  
+    btn.style.border = "1px solid rgba(48,209,88,0.35)";  
+    btn.style.color = "#30D158";  
+    btn.innerHTML = '✓ Ocultar finalizadas <span id="fin-badge" style="background:#30D158;color:#fff;border-radius:20px;padding:1px 6px;font-size:10px;font-weight:700;"></span>';  
+  } else {  
+    btn.style.background = "rgba(0,0,0,0.05)";  
+    btn.style.border = "1px solid transparent";  
+    btn.style.color = "#636366";  
+    btn.innerHTML = '👁 Finalizadas <span id="fin-badge" style="display:none;background:#c7c7cc;color:#fff;border-radius:20px;padding:1px 6px;font-size:10px;font-weight:700;"></span>';  
+  }  
+  renderStats(); // refresh badge count  
+}  
+  
+// ─── Task actions ────────────────────────────────────────────  
+function addTask() {  
+  const taskVal = document.getElementById("f-task").value.trim();  
+  if (!taskVal) { toast("Escribe una tarea primero"); return; }  
+  const maxNum = tasks.length ? Math.max(...tasks.map(t=>Number(t.num)||0)) : 0;  
+  tasks.unshift({  
+    id:       Date.now(),  
+    num:      maxNum + 1,  
+    task:     taskVal,  
+    comments: document.getElementById("f-comments").value.trim(),  
+    startDate:document.getElementById("f-start").value || todayISO(),  
+    dueDate:  document.getElementById("f-due").value || "",  
+    project:  formProj,  
+    status:   document.getElementById("f-status").value,  
+    photo:    null,  
+  });  
+  save();  
+  resetForm();  
+  document.getElementById("add-form").style.display = "none";  
+  document.getElementById("btn-new").textContent = "+ Nueva";  
+  renderAll();  
+  toast("✓ Tarea añadida", "ok");  
+}  
+  
+function updateStatus(id, status) {  
+  tasks = tasks.map(t => t.id===id ? {...t, status} : t);  
+  save();  
+  renderAll();  
+}  
+  
+function deleteTask(id) {  
+  if (!confirm("¿Eliminar esta tarea?")) return;  
+  tasks = tasks.filter(t => t.id !== id);  
+  save();  
+  renderAll();  
+}  
+  
+function toggleFin() {  
+  showFin = !showFin;  
+  renderFinBtn();  
+  renderTasks();  
+}  
+  
+function toggleForm() {  
+  const f = document.getElementById("add-form");  
+  const btn = document.getElementById("btn-new");  
+  if (f.style.display === "none") {  
+    resetForm();  
+    f.style.display = "block";  
+    btn.textContent = "✕ Cancelar";  
+    setTimeout(() => document.getElementById("f-task").focus(), 60);  
+  } else {  
+    f.style.display = "none";  
+    btn.textContent = "+ Nueva";  
+  }  
+}  
+  
+// ─── Photo ───────────────────────────────────────────────────  
+let photoTargetId = null;  
+function attachPhoto(id) {  
+  photoTargetId = id;  
+  const inp = document.createElement("input");  
+  inp.type = "file"; inp.accept = "image/*";  
+  inp.onchange = e => {  
+    const file = e.target.files[0]; if (!file) return;  
+    const reader = new FileReader();  
+    reader.onload = ev => {  
+      tasks = tasks.map(t => t.id===photoTargetId ? {...t, photo:ev.target.result} : t);  
+      save(); renderTasks();  
+    };  
+    reader.readAsDataURL(file);  
+  };  
+  inp.click();  
+}  
+  
+// ─── Comments popup ──────────────────────────────────────────  
+function openComments(id) {  
+  const t = tasks.find(t=>t.id===id); if (!t) return;  
+  const del = getDelay(t.dueDate);  
+  document.getElementById("pc-meta").textContent  = "#"+t.num+" · "+t.project;  
+  document.getElementById("pc-title").textContent = t.task;  
+  document.getElementById("pc-body").textContent  = t.comments || "Sin comentarios";  
+  document.getElementById("pc-body").style.color  = t.comments ? "#1c1c1e" : "#aeaeb2";  
+  document.getElementById("pc-dates").innerHTML   = `<span>📅 ${fmt(t.startDate)}</span><span style="color:${del>0?"#FF453A":"#636366"};font-weight:${del>0?700:400};">🏁 ${fmt(t.dueDate)}</span>`;  
+  document.getElementById("pc-photo").innerHTML   = t.photo ? `<img src="${t.photo}" style="width:100%;border-radius:12px;object-fit:cover;max-height:130px;"/>` : "";  
+  document.getElementById("pop-c").style.display  = "flex";  
+}  
+function closeComments() { document.getElementById("pop-c").style.display = "none"; }  
+  
+// ─── Project picker ──────────────────────────────────────────  
+function openProjPicker() {  
+  renderChips();  
+  document.getElementById("np-inp").value = "";  
+  document.getElementById("pop-p").style.display = "flex";  
+  setTimeout(()=>document.getElementById("np-inp").focus(), 100);  
+}  
+function closeProjPicker() { document.getElementById("pop-p").style.display = "none"; }  
+  
+function renderChips() {  
+  document.getElementById("proj-chips").innerHTML = projs.map(p=>`  
+    <button onclick="selectProj('${esc(p)}')" style="padding:7px 14px;border-radius:20px;border:none;cursor:pointer;font-family:inherit;font-size:12px;font-weight:600;background:${formProj===p?"#007AFF":"rgba(0,0,0,0.07)"};color:${formProj===p?"#fff":"#1c1c1e"};">${esc(p)}</button>  
+  `).join("");  
+}  
+  
+function selectProj(p) {  
+  formProj = p;  
+  document.getElementById("f-proj-lbl").textContent = p;  
+  closeProjPicker();  
+}  
+  
+function addProj() {  
+  const name = document.getElementById("np-inp").value.trim();  
+  if (!name || projs.includes(name)) return;  
+  projs.push(name);  
+  saveProjs();  
+  formProj = name;  
+  document.getElementById("f-proj-lbl").textContent = name;  
+  document.getElementById("np-inp").value = "";  
+  renderChips();  
+  toast("✓ Proyecto '"+name+"' creado", "ok");  
+}  
+  
+// ─── Edit task ───────────────────────────────────────────────  
+let editId = null;  
+let editProj = "";  
+  
+function openEdit(id) {  
+  const t = tasks.find(t => t.id === id);  
+  if (!t) return;  
+  editId = id;  
+  editProj = t.project || projs[0] || "";  
+  document.getElementById("e-task").value     = t.task || "";  
+  document.getElementById("e-comments").value = t.comments || "";  
+  document.getElementById("e-start").value    = t.startDate || "";  
+  document.getElementById("e-due").value      = t.dueDate || "";  
+  document.getElementById("e-status").value   = t.status || "not_started";  
+  document.getElementById("e-proj-lbl").textContent = editProj;  
+  document.getElementById("pop-e").style.display = "flex";  
+  setTimeout(() => document.getElementById("e-task").focus(), 60);  
+}  
+  
+function closeEdit() {  
+  document.getElementById("pop-e").style.display = "none";  
+  editId = null;  
+}  
+  
+function saveEdit() {  
+  const taskVal = document.getElementById("e-task").value.trim();  
+  if (!taskVal) { toast("La tarea no puede estar vacía"); return; }  
+  tasks = tasks.map(t => t.id === editId ? {  
+    ...t,  
+    task:      taskVal,  
+    comments:  document.getElementById("e-comments").value.trim(),  
+    startDate: document.getElementById("e-start").value || t.startDate,  
+    dueDate:   document.getElementById("e-due").value || "",  
+    project:   editProj,  
+    status:    document.getElementById("e-status").value,  
+  } : t);  
+  save();  
+  closeEdit();  
+  renderAll();  
+  toast("✓ Tarea actualizada", "ok");  
+}  
+  
+function openProjPickerEdit() {  
+  // Temporarily use editProj as formProj for the chip highlight  
+  const prev = formProj;  
+  formProj = editProj;  
+  renderChips();  
+  // Override chip onclick to update editProj instead  
+  document.getElementById("proj-chips").querySelectorAll("button").forEach(btn => {  
+    const p = btn.textContent;  
+    btn.onclick = () => {  
+      editProj = p;  
+      formProj = prev;  
+      document.getElementById("e-proj-lbl").textContent = p;  
+      closeProjPicker();  
+    };  
+  });  
+  document.getElementById("np-inp").value = "";  
+  document.getElementById("pop-p").style.display = "flex";  
+}  
+  
+// ─── Resize ──────────────────────────────────────────────────  
+window.addEventListener("resize", () => {  
+  if (document.getElementById("s-todo").classList.contains("on")) {  
+    renderHeader(); renderTasks();  
+  }  
+});  
+</script>  
+  
+</body>  
+</html>  
